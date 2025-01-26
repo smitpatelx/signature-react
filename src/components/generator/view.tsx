@@ -7,7 +7,7 @@ export const GeneratorView = () => {
         <div className="flex-1 h-full flex flex-col">
             <Configuration />
 
-            <div className="flex-1 h-full flex flex-row flex-nowrap gap-4">
+            <div className="flex-1 h-full flex flex-row flex-nowrap gap-4 container mx-auto">
                 <Form />
 
                 <div className="inline-block w-px bg-zinc-800" />
