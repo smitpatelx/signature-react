@@ -20,7 +20,7 @@ export const Input = forwardRef<
         <fieldset className={cn("flex flex-col gap-1", wrapperClassName)}>
             <label
                 htmlFor={id}
-                className="text-sm font-medium text-zinc-300"
+                className="text-sm font-medium text-zinc-300 select-none cursor-default"
             >
                 {label}
             </label>

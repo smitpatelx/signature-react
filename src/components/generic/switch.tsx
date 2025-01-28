@@ -47,7 +47,7 @@ export const Switch = ({
                     htmlFor={id}
                     onClick={handleEvent}
                     onKeyDown={handleKeyDown}
-                    className="text-sm font-medium text-zinc-300"
+                    className="text-sm font-medium text-zinc-300 select-none cursor-default"
                 >
                     {label}
                 </label>

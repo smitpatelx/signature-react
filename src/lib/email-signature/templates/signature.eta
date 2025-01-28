@@ -1,0 +1,415 @@
+<table
+  id="signature"
+  style="
+    max-width: 600px;
+    direction: ltr;
+    background: <%= data.tableBackground %>;
+    border: 4px solid <%= data.tableBorder %>;
+  "
+>
+  <tbody class="">
+    <tr class="">
+      <td class="">
+        <table
+          class="html new_10 wisestamp_app main_sig"
+          border="0"
+          cellpadding="0"
+          cellspacing="0"
+          style="width: 520px; padding-bottom: 15px; margin-bottom: 8px"
+        >
+          <tbody class="">
+            <tr class="">
+              <td
+                valign="top"
+                width="10"
+                style="vertical-align: top; width: 15px"
+                class=""
+              >
+                <img
+                  src="<%= data.profileImageUrl %>"
+                  alt="photo"
+                  width="<%= data.profileImageWidth %>"
+                  height="<%= data.profileImageHeight %>"
+                  style="
+                    border-top-left-radius: 50%;
+                    border-top-right-radius: 50%;
+                    border-bottom-right-radius: 50%;
+                    border-bottom-left-radius: 50%;
+                    max-width: 120px;
+                  "
+                />
+              </td>
+              <td
+                valign="top"
+                style="vertical-align: top; padding-left: 20px"
+                class=""
+              >
+                <table
+                  border="0"
+                  cellpadding="0"
+                  cellspacing="0"
+                  width="100%"
+                  style="width: 435px"
+                  class=""
+                >
+                  <tbody class="">
+                    <tr class="">
+                      <td style="padding-bottom: 6px" class="">
+                        <table
+                          border="0"
+                          cellpadding="0"
+                          cellspacing="0"
+                          width="100%"
+                          style="
+                            line-height: 1.6;
+                            font-family: Arial;
+                            font-size: 11px;
+                            color: <%= data.headerTableColor %>;
+                            padding-left: 2px;
+                            width: 433px;
+                          "
+                          class=""
+                        >
+                          <tbody class="">
+                            <tr class="">
+                              <td class="">
+                                <div
+                                  style="
+                                    color: <%= data.nameColor %>;
+                                    padding-bottom: 2px;
+                                    margin: 0px;
+                                    font-size: <%= data.nameFontSize %>;
+                                    font-weight: bold;
+                                    line-height: 18px;
+                                  "
+                                  class=""
+                                >
+                                  <%= data.name %>
+                                </div>
+                                <span
+                                  style="
+                                    color: <%= data.positionColor %>;
+                                    font-size: <%= data.positionFontSize %>;
+                                  "
+                                  class=""
+                                >
+                                  <%= data.position %>
+                                </span>
+                                <span
+                                  style="
+                                    color: <%= data.companyColor %>;
+                                    font-size: <%= data.companyFontSize %>;
+                                    font-weight: bold;
+                                  "
+                                  class=""
+                                >
+                                  <%= data.companyName %>
+                                </span>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </td>
+                    </tr>
+                    <tr class="">
+                      <td
+                        width="328"
+                        style="
+                          padding-bottom: 7px;
+                          padding-top: 5px;
+                          width: 328px;
+                        "
+                        class=""
+                      >
+                        <table
+                          border="0"
+                          cellpadding="0"
+                          cellspacing="0"
+                          width="100%"
+                          style="
+                            line-height: 1.6;
+                            font-family: Arial;
+                            font-size: 11px;
+                            color: <%= data.contactTableColor %>;
+                            padding-left: 2px;
+                            width: 433px;
+                          "
+                          class=""
+                        >
+                          <tbody class="">
+                            <tr class="">
+                              <td
+                                style="
+                                  padding-right: 0px;
+                                  height: <%= data.phoneIconHeight %>;
+                                  width: <%= data.phoneIconWidth %>;
+                                  padding-bottom: 0px;
+                                "
+                                class=""
+                              >
+                                <img
+                                  height="15px"
+                                  style="margin-top: 4px"
+                                  width="15px"
+                                  src="<%= data.phoneIconUrl %>"
+                                />
+                              </td>
+                              <td
+                                style="padding: 0 0 0 5px; margin-left: 0px"
+                                class=""
+                              >
+                                <a
+                                  href="tel:<%= data.phone %>"
+                                  style="
+                                    vertical-align: middle;
+                                    text-decoration: none;
+                                    color: <%= data.phoneTextColor %>;
+                                    font-size: <%= data.phoneTextFontSize %>;
+                                    margin: 0px;
+                                  "
+                                  class=""
+                                  ><%= data.phone %> &nbsp;</a
+                                >
+                              </td>
+                            </tr>
+                            <tr class="">
+                              <td
+                                style="
+                                  padding-right: 0px;
+                                  width: 15px;
+                                  padding-bottom: 0px;
+                                "
+                                class=""
+                              >
+                                <img
+                                  height="<%= data.emailIconHeight %>"
+                                  width="<%= data.emailIconWidth %>"
+                                  style="margin-top: 4px"
+                                  src="<%= data.emailIconUrl %>"
+                                />
+                              </td>
+                              <td
+                                style="padding: 0 0 0 5px; margin-left: 0px"
+                                class=""
+                              >
+                                <a
+                                  href="mailto:${email}"
+                                  style="
+                                    vertical-align: middle;
+                                    text-decoration: none;
+                                    color: <%= data.emailTextColor %>;
+                                    font-size: <%= data.emailTextFontSize %>;
+                                    margin: 0px;
+                                  "
+                                  class=""
+                                  ><%= data.email %> &nbsp;</a
+                                >
+                              </td>
+                            </tr>
+                            <tr class="">
+                              <td
+                                style="
+                                  padding-right: 0px;
+                                  width: 15px;
+                                  padding-bottom: 0px;
+                                "
+                                class=""
+                              >
+                                <img
+                                  height="<%= data.websiteIconHeight %>"
+                                  width="<%= data.websiteIconWidth %>"
+                                  style="margin-top: 4px"
+                                  src="<%= data.websiteIconUrl %>"
+                                />
+                              </td>
+                              <td
+                                style="padding: 0 0 0 5px; margin-left: 0px"
+                                class=""
+                              >
+                                <a
+                                  href="<%= data.website %>"
+                                  style="
+                                    vertical-align: middle;
+                                    text-decoration: none;
+                                    color: <%= data.websiteTextColor %>;
+                                    font-size: <%= data.websiteTextFontSize %>;
+                                    margin: 0px;
+                                  "
+                                  class=""
+                                  ><%= data.website %> &nbsp;</a
+                                >
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                        <table
+                          border="0"
+                          cellpadding="0"
+                          cellspacing="0"
+                          class=""
+                        >
+                          <tbody class="">
+                            <tr class="">
+                              <td style="padding-top: 15px" class="">
+                                <table
+                                  border="0"
+                                  cellpadding="0"
+                                  cellspacing="0"
+                                  class=""
+                                >
+                                  <tbody class="">
+                                    <tr style="padding-top: 15px" class="">
+                                      <td
+                                        align="left"
+                                        style="
+                                          padding-right: 5px;
+                                          text-align: center;
+                                          padding-top: 0px;
+                                        "
+                                        class=""
+                                      >
+                                        <a
+                                          href="<%= data.linkedinUrl %>"
+                                          target="_blank"
+                                        >
+                                          <img
+                                            height="<%= data.linkedinIconHeight %>"
+                                            width="<%= data.linkedinIconWidth %>"
+                                            src="<%= data.linkedinIconUrl %>"
+                                            class=""
+                                          />
+                                        </a>
+                                      </td>
+                                      <td
+                                        align="left"
+                                        style="
+                                          padding-right: 5px;
+                                          text-align: center;
+                                          padding-top: 0px;
+                                        "
+                                        class=""
+                                      >
+                                        <a
+                                          href="<%= data.instagramUrl %>"
+                                          target="_blank"
+                                        >
+                                          <img
+                                            height="<%= data.instagramIconHeight %>"
+                                            width="<%= data.instagramIconWidth %>"
+                                            src="<%= data.instagramIconUrl %>"
+                                            class=""
+                                          />
+                                        </a>
+                                      </td>
+                                      <td
+                                        align="left"
+                                        style="
+                                          padding-right: 5px;
+                                          text-align: center;
+                                          padding-top: 0px;
+                                        "
+                                        class=""
+                                      >
+                                        <a
+                                          href="<%= data.xUrl %>"
+                                          target="_blank"
+                                        >
+                                          <img
+                                            height="<%= data.xIconHeight %>"
+                                            width="<%= data.xIconWidth %>"
+                                            src="<%= data.xIconUrl %>"
+                                            class=""
+                                          />
+                                        </a>
+                                      </td>
+                                      <td
+                                        align="left"
+                                        style="
+                                          padding-right: 5px;
+                                          text-align: center;
+                                          padding-top: 0px;
+                                        "
+                                        class=""
+                                      >
+                                        <a
+                                          href="<%= data.githubUrl %>"
+                                          target="_blank"
+                                        >
+                                          <img
+                                            height="<%= data.githubIconHeight %>"
+                                            width="<%= data.githubIconWidth %>"
+                                            src="<%= data.githubIconUrl %>"
+                                            class=""
+                                          />
+                                        </a>
+                                      </td>
+                                      <td
+                                        align="left"
+                                        style="
+                                          padding-right: 5px;
+                                          text-align: center;
+                                          padding-top: 0px;
+                                        "
+                                        class=""
+                                      >
+                                        <a
+                                          href="<%= data.facebookUrl %>"
+                                          target="_blank"
+                                        >
+                                          <img
+                                            height="<%= data.facebookIconHeight %>"
+                                            width="<%= data.facebookIconWidth %>"
+                                            src="<%= data.facebookIconUrl %>"
+                                            class=""
+                                          />
+                                        </a>
+                                      </td>
+                                    </tr>
+                                  </tbody>
+                                </table>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+        <div style="clear: both; height: 0px !important" class=""></div>
+        <table cellpadding="0" cellspacing="0" border="0" class="">
+          <tbody class="">
+            <tr class="">
+              <td class="">
+                <table
+                  class="banner wisestamp_app"
+                  style="margin: 8px 8px 0px 0px; display: inline-block"
+                >
+                  <tbody class="">
+                    <tr class="">
+                      <td class="">
+                        <a href="<%= data.bannerUrl %>" target="_blank" class=""
+                          ><img
+                            src="<%= data.bannerImageUrl %>"
+                            width="<%= data.bannerImageWidth %>"
+                            style="
+                              width: <%= data.bannerImageStyleWidth %>;
+                              height: <%= data.bannerImageStyleHeight %>;
+                            "
+                            class=""
+                        /></a>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </td>
+    </tr>
+  </tbody>
+</table>
