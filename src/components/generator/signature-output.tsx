@@ -16,7 +16,7 @@ export const SignatureOutput = (props: Pick<GeneratorReducerState['config'], 'li
             <h3>Signature Preview</h3>
 
             <div
-                className="flex-1 h-full border border-zinc-800 rounded-md p-4"
+                className="flex-1 h-full border border-zinc-800 rounded-lg p-0 overflow-hidden flex flex-col items-stretch justify-center"
                 dangerouslySetInnerHTML={{ __html: htmlOutput }}
             />
         </div>

@@ -101,14 +101,14 @@ const BANNER_INPUTS = {
         id: "bannerUrl",
         autoComplete: "bannerUrl",
         type: "url",
-        placeholder: "https://github.com/username",
+        placeholder: "https://yourwebsite.com/contact",
     },
     bannerImageUrl: {
         label: "Banner Image Url",
         id: "bannerImageUrl",
         autoComplete: "bannerImageUrl",
         type: "url",
-        placeholder: "https://linkedin.com/in/username",
+        placeholder: "https://static.yourwebsite.com/banner.jpg",
     },
 } as Readonly<Record<InputFieldKey, InputDetails>>;
 
@@ -213,13 +213,13 @@ export const Form = ({
 
                     <Input
                         {...BANNER_INPUTS.bannerUrl}
-                        value={values.githubUrl}
+                        value={values.bannerUrl}
                         onChange={(e) => dispatch({ event: 'BannerUrlUpdated', payload: e.target.value })}
                     />
 
                     <Input
                         {...BANNER_INPUTS.bannerImageUrl}
-                        value={values.linkedinUrl}
+                        value={values.bannerImageUrl}
                         onChange={(e) => dispatch({ event: 'BannerImageUrlUpdated', payload: e.target.value })}
                     />
                 </div>

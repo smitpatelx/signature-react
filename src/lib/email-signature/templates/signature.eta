@@ -148,9 +148,8 @@
                                 class=""
                               >
                                 <img
-                                  height="15px"
-                                  style="margin-top: 4px"
-                                  width="15px"
+                                  height="<%= data.phoneIconHeight %>"
+                                  width="<%= data.phoneIconWidth %>"
                                   src="<%= data.phoneIconUrl %>"
                                 />
                               </td>
@@ -184,7 +183,6 @@
                                 <img
                                   height="<%= data.emailIconHeight %>"
                                   width="<%= data.emailIconWidth %>"
-                                  style="margin-top: 4px"
                                   src="<%= data.emailIconUrl %>"
                                 />
                               </td>
@@ -218,7 +216,6 @@
                                 <img
                                   height="<%= data.websiteIconHeight %>"
                                   width="<%= data.websiteIconWidth %>"
-                                  style="margin-top: 4px"
                                   src="<%= data.websiteIconUrl %>"
                                 />
                               </td>
