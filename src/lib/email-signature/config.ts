@@ -93,67 +93,104 @@ export type ThemeVariables = {
     bannerImageStyleHeight: string;
 };
 
-export const LOGO_SIZES = {
+export const ICON_SIZES = {
     sm: 'sm',
     md: 'md',
     lg: 'lg',
 } as const;
+export type IconSize = typeof ICON_SIZES[keyof typeof ICON_SIZES];
 
 export const SIZES = {
     profileImage: {
-        [LOGO_SIZES.sm]: {
+        [ICON_SIZES.sm]: {
             height: '50px',
             width: '50px',
         },
-        [LOGO_SIZES.md]: {
+        [ICON_SIZES.md]: {
             height: '65',
             width: '65',
         },
-        [LOGO_SIZES.lg]: {
+        [ICON_SIZES.lg]: {
             height: '75px',
             width: '75px',
         },
     },
     contactIcon: {
-        [LOGO_SIZES.sm]: {
+        [ICON_SIZES.sm]: {
             height: '10px',
             width: '10px',
         },
-        [LOGO_SIZES.md]: {
+        [ICON_SIZES.md]: {
             height: '15px',
             width: '15px',
         },
-        [LOGO_SIZES.lg]: {
+        [ICON_SIZES.lg]: {
             height: '20px',
             width: '20px',
         },
     },
     socialIcon: {
-        [LOGO_SIZES.sm]: {
+        [ICON_SIZES.sm]: {
             height: '25px',
             width: '25px',
         },
-        [LOGO_SIZES.md]: {
+        [ICON_SIZES.md]: {
             height: '30px',
             width: '30px',
         },
-        [LOGO_SIZES.lg]: {
+        [ICON_SIZES.lg]: {
             height: '35px',
             width: '35px',
         },
     },
     banner: {
-        [LOGO_SIZES.sm]: {
+        [ICON_SIZES.sm]: {
             height: 'auto',
             width: '300px',
         },
-        [LOGO_SIZES.md]: {
+        [ICON_SIZES.md]: {
             height: 'auto',
             width: '390px',
         },
-        [LOGO_SIZES.lg]: {
+        [ICON_SIZES.lg]: {
             height: 'auto',
             width: '460px',
         },
     }
+}
+
+export const getVariablesWithSize = (size: IconSize) => (themeVariables: ThemeVariables): ThemeVariables => {
+    return {
+        ...themeVariables,
+
+        profileImageWidth: SIZES.profileImage[size].width,
+        profileImageHeight: SIZES.profileImage[size].height,
+
+        phoneIconHeight: SIZES.contactIcon[size].height,
+        phoneIconWidth: SIZES.contactIcon[size].width,
+
+        emailIconHeight: SIZES.contactIcon[size].height,
+        emailIconWidth: SIZES.contactIcon[size].width,
+
+        websiteIconHeight: SIZES.contactIcon[size].height,
+        websiteIconWidth: SIZES.contactIcon[size].width,
+
+        linkedinIconHeight: SIZES.socialIcon[size].height,
+        linkedinIconWidth: SIZES.socialIcon[size].width,
+
+        instagramIconHeight: SIZES.socialIcon[size].height,
+        instagramIconWidth: SIZES.socialIcon[size].width,
+
+        xIconHeight: SIZES.socialIcon[size].height,
+        xIconWidth: SIZES.socialIcon[size].width,
+
+        githubIconHeight: SIZES.socialIcon[size].height,
+        githubIconWidth: SIZES.socialIcon[size].width,
+
+        facebookIconHeight: SIZES.socialIcon[size].height,
+        facebookIconWidth: SIZES.socialIcon[size].width,
+
+        bannerImageStyleHeight: SIZES.banner[size].height,
+        bannerImageStyleWidth: SIZES.banner[size].width,
+    } satisfies ThemeVariables;
 }

@@ -9,6 +9,7 @@ export const SignatureOutput = (props: Pick<GeneratorReducerState['config'], 'li
             ...props,
             companyName: props.company,
             lightMode: props.lightModeEnabled,
+            size: 'lg',
         });
     }, [props]);
 
