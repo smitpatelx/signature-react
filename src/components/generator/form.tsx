@@ -1,5 +1,5 @@
 import { GeneratorActionT, GeneratorReducerState } from "@spx/lib";
-import { Input } from "../generic"
+import { Divider, Input } from "@spx/components";
 import { ActionDispatch } from "react";
 
 type InputDetails = {
@@ -175,8 +175,10 @@ export const Form = ({
 
             {socialMediaEnabled ? (
                 <div className="col-span-2 grid grid-cols-1 gap-4">
-                    <div className="pt-4 pb-2 border-b border-zinc-800">
-                        <h2 className="text-lg font-semibold">Social Media</h2>
+                    <div className="pt-4 pb-2 flex flex-col gap-2">
+                        <h2 className="text-lg font-semibold text-zinc-100">Social Media</h2>
+
+                        <Divider />
                     </div>
 
                     <Input
@@ -207,8 +209,10 @@ export const Form = ({
 
             {bannerEnabled ? (
                 <div className="col-span-2 grid grid-cols-1 gap-4">
-                    <div className="pt-4 pb-2 border-b border-zinc-800">
-                        <h2 className="text-lg font-semibold">Banner</h2>
+                    <div className="pt-4 pb-2 flex flex-col gap-2">
+                        <h2 className="text-lg font-semibold text-zinc-100">Banner</h2>
+
+                        <Divider />
                     </div>
 
                     <Input
