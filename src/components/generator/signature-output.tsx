@@ -4,7 +4,6 @@ import { useMemo } from "react";
 
 export const SignatureOutput = (props: Pick<GeneratorReducerState['config'], 'lightModeEnabled'> & GeneratorReducerState['formValues']) => {
     const htmlOutput = useMemo(() => {
-        console.log('props', props.company);
         return generateTemplate({
             ...props,
             companyName: props.company,
