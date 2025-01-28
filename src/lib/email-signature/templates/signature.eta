@@ -191,7 +191,7 @@
                                 class=""
                               >
                                 <a
-                                  href="mailto:${email}"
+                                  href="mailto:<%= data.email %>"
                                   style="
                                     vertical-align: middle;
                                     text-decoration: none;
