@@ -1,6 +1,9 @@
 
 export const APP_CONFIG = {
     staticHostName: 'https://static.smitpatelx.com',
+    projectRepo: 'https://github.com/smitpatelx/signature-react',
+    authorPortfolio: 'https://smitpatelx.com',
+    authorEmail: 'mailto:inspire@smitpatelx.com',
 }
 
 export const getStaticUrl = (pathWithForwardSlash: string) => {

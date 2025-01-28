@@ -2,14 +2,9 @@ import { Divider } from "@spx/components";
 import { generateTemplate, GeneratorReducerState } from "@spx/lib";
 import { useMemo } from "react";
 
-export const SignatureOutput = (props: Pick<GeneratorReducerState['config'], 'lightModeEnabled'> & GeneratorReducerState['formValues']) => {
+export const SignatureOutput = (props: GeneratorReducerState['config'] & GeneratorReducerState['formValues']) => {
     const htmlOutput = useMemo(() => {
-        return generateTemplate({
-            ...props,
-            companyName: props.company,
-            lightMode: props.lightModeEnabled,
-            size: 'lg',
-        });
+        return generateTemplate(props);
     }, [props]);
 
     return (

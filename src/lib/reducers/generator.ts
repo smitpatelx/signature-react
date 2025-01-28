@@ -1,5 +1,6 @@
 import { useReducer } from "react";
 import { assertNeverThrow, Lens } from "@spx/lib";
+import { ICON_SIZES, IconSize } from "../email-signature";
 
 export type GeneratorReducerState = {
     config: {
@@ -9,11 +10,12 @@ export type GeneratorReducerState = {
         socialMediaEnabled: boolean;
         bannerEnabled: boolean;
         lightModeEnabled: boolean;
+        iconSize: IconSize;
     },
     formValues: {
         name: string;
         position: string;
-        company: string;
+        companyName: string;
         email: string;
         phone: string;
         profileImageUrl: string;
@@ -34,13 +36,14 @@ const DEFAULT_STATE: GeneratorReducerState = {
         phoneEnabled: true,
         websiteEnabled: true,
         socialMediaEnabled: true,
-        bannerEnabled: false,
+        bannerEnabled: true,
         lightModeEnabled: false,
+        iconSize: ICON_SIZES.sm,
     },
     formValues: {
         name: 'Smit',
         position: 'Software Engineer',
-        company: 'Company Inc.',
+        companyName: 'Company Inc.',
         email: 'smit@company.com',
         phone: '+1 000-000-0000',
         profileImageUrl: 'https://avatars.githubusercontent.com/u/36929408?v=4',
@@ -49,8 +52,8 @@ const DEFAULT_STATE: GeneratorReducerState = {
         linkedinUrl: 'https://linkedin.com/in/smitpatelx',
         xUrl: 'https://x.com/smitpatelx',
         instagramUrl: 'https://instagram.com/smit.dev',
-        facebookUrl: '',
-        bannerUrl: '',
+        facebookUrl: '#',
+        bannerUrl: '#',
         bannerImageUrl: '',
     }
 };
@@ -64,13 +67,14 @@ const GeneratorLens = {
     socialMediaEnabled: Lens.fromPath<GeneratorReducerState>()(['config', 'socialMediaEnabled']),
     lightModeEnabled: Lens.fromPath<GeneratorReducerState>()(['config', 'lightModeEnabled']),
     bannerEnabled: Lens.fromPath<GeneratorReducerState>()(['config', 'bannerEnabled']),
+    iconSize: Lens.fromPath<GeneratorReducerState>()(['config', 'iconSize']),
 
     formValues: Lens.fromProp<GeneratorReducerState>()('formValues'),
 
     profileImageUrl: Lens.fromPath<GeneratorReducerState>()(['formValues', 'profileImageUrl']),
     name: Lens.fromPath<GeneratorReducerState>()(['formValues', 'name']),
     position: Lens.fromPath<GeneratorReducerState>()(['formValues', 'position']),
-    company: Lens.fromPath<GeneratorReducerState>()(['formValues', 'company']),
+    company: Lens.fromPath<GeneratorReducerState>()(['formValues', 'companyName']),
     email: Lens.fromPath<GeneratorReducerState>()(['formValues', 'email']),
     phone: Lens.fromPath<GeneratorReducerState>()(['formValues', 'phone']),
     website: Lens.fromPath<GeneratorReducerState>()(['formValues', 'website']),
@@ -93,10 +97,11 @@ export type GeneratorActionT =
     { event: 'WebsiteEnabledUpdated', payload: boolean } |
     { event: 'SocialMediaEnabledUpdated', payload: boolean } |
     { event: 'BannerEnabledUpdated', payload: boolean } |
+    { event: 'IconSizeUpdated', payload: IconSize } |
     { event: 'LightModeEnabledUpdated', payload: boolean } |
     { event: 'NameUpdated', payload: string } |
     { event: 'PositionUpdated', payload: string } |
-    { event: 'CompanyUpdated', payload: string } |
+    { event: 'CompanyNameUpdated', payload: string } |
     { event: 'EmailUpdated', payload: string } |
     { event: 'PhoneUpdated', payload: string } |
     { event: 'ProfileImageUrlUpdated', payload: string } |
@@ -135,13 +140,15 @@ const reducer = (state: GeneratorReducerState, action: GeneratorActionT): Genera
             return GeneratorLens.socialMediaEnabled.set(action.payload)(state);
         case 'BannerEnabledUpdated':
             return GeneratorLens.bannerEnabled.set(action.payload)(state);
+        case 'IconSizeUpdated':
+            return GeneratorLens.iconSize.set(action.payload)(state);
         case 'LightModeEnabledUpdated':
             return GeneratorLens.lightModeEnabled.set(action.payload)(state);
         case 'NameUpdated':
             return GeneratorLens.name.set(action.payload)(state);
         case 'PositionUpdated':
             return GeneratorLens.position.set(action.payload)(state);
-        case 'CompanyUpdated':
+        case 'CompanyNameUpdated':
             return GeneratorLens.company.set(action.payload)(state);
         case 'EmailUpdated':
             return GeneratorLens.email.set(action.payload)(state);

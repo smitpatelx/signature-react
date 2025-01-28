@@ -18,6 +18,12 @@ export type ContentVariables = {
 
     bannerUrl: string;
     bannerImageUrl: string;
+
+    phoneEnabled: boolean;
+    emailEnabled: boolean;
+    websiteEnabled: boolean;
+    socialMediaEnabled: boolean;
+    bannerEnabled: boolean;
 };
 
 export type ThemeVariables = {
@@ -107,8 +113,8 @@ export const SIZES = {
             width: '50px',
         },
         [ICON_SIZES.md]: {
-            height: '65',
-            width: '65',
+            height: '65px',
+            width: '65px',
         },
         [ICON_SIZES.lg]: {
             height: '75px',
@@ -117,12 +123,12 @@ export const SIZES = {
     },
     contactIcon: {
         [ICON_SIZES.sm]: {
-            height: '10px',
-            width: '10px',
+            height: '18px',
+            width: '18px',
         },
         [ICON_SIZES.md]: {
-            height: '15px',
-            width: '15px',
+            height: '20px',
+            width: '20px',
         },
         [ICON_SIZES.lg]: {
             height: '20px',
@@ -131,16 +137,16 @@ export const SIZES = {
     },
     socialIcon: {
         [ICON_SIZES.sm]: {
-            height: '25px',
-            width: '25px',
-        },
-        [ICON_SIZES.md]: {
             height: '30px',
             width: '30px',
         },
+        [ICON_SIZES.md]: {
+            height: '36px',
+            width: '36px',
+        },
         [ICON_SIZES.lg]: {
-            height: '35px',
-            width: '35px',
+            height: '42px',
+            width: '42px',
         },
     },
     banner: {

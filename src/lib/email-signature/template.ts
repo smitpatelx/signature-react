@@ -9,23 +9,23 @@ import { pipe } from "../fpts";
 
 const eta = new Eta({ varName: "data" });
 
-export const getSignatureHtml = (allVariables: Record<string, string>): string => {
+export const getSignatureHtml = (allVariables: Record<string, string | boolean>): string => {
     return eta.renderString(templateFile, allVariables);
 }
 
-type TemplateVariables = ContentVariables & { lightMode: boolean; size: IconSize; };
+type TemplateVariables = ContentVariables & { lightModeEnabled: boolean; iconSize: IconSize; };
 
-const getThemeVariables = (lightMode: boolean) => {
-    if (lightMode) {
+const getThemeVariables = (lightModeEnabled: boolean) => {
+    if (lightModeEnabled) {
         return LightModeVariables;
     }
     return DarkModeVariables;
 }
 
 const getAllVariables = (prop: TemplateVariables) => {
-    const { lightMode, size, ...contentVariables } = prop;
+    const { lightModeEnabled, iconSize, ...contentVariables } = prop;
 
-    const themeVariables = pipe(lightMode, getThemeVariables, getVariablesWithSize(size));
+    const themeVariables = pipe(lightModeEnabled, getThemeVariables, getVariablesWithSize(iconSize));
 
     return {
         ...themeVariables,

@@ -27,7 +27,7 @@ const MAIN_INPUTS = {
         type: "text",
         placeholder: "Software Engineer",
     },
-    company: {
+    companyName: {
         label: "Company Name",
         id: "companyName",
         autoComplete: "companyName",
@@ -92,6 +92,13 @@ const SOCIAL_MEDIA_INPUTS = {
         autoComplete: "instagramUrl",
         type: "url",
         placeholder: "https://instagram.com/username",
+    },
+    facebookUrl: {
+        label: "Facebook Profile",
+        id: "facebookUrl",
+        autoComplete: "facebookUrl",
+        type: "url",
+        placeholder: "https://facebook.com/username",
     }
 } as Readonly<Record<InputFieldKey, InputDetails>>;
 
@@ -138,9 +145,9 @@ export const Form = ({
             />
 
             <Input
-                {...MAIN_INPUTS.company}
-                value={values.company}
-                onChange={(e) => dispatch({ event: 'CompanyUpdated', payload: e.target.value })}
+                {...MAIN_INPUTS.companyName}
+                value={values.companyName}
+                onChange={(e) => dispatch({ event: 'CompanyNameUpdated', payload: e.target.value })}
             />
 
             {emailEnabled ? (
@@ -203,6 +210,12 @@ export const Form = ({
                         {...SOCIAL_MEDIA_INPUTS.instagramUrl}
                         value={values.instagramUrl}
                         onChange={(e) => dispatch({ event: 'InstagramUrlUpdated', payload: e.target.value })}
+                    />
+
+                    <Input
+                        {...SOCIAL_MEDIA_INPUTS.facebookUrl}
+                        value={values.facebookUrl}
+                        onChange={(e) => dispatch({ event: 'FacebookUrlUpdated', payload: e.target.value })}
                     />
                 </div>
             ) : null}

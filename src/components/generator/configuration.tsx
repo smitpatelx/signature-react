@@ -1,6 +1,18 @@
-import { Switch } from "@spx/components"
-import { GeneratorActionT, GeneratorReducerState } from "@spx/lib"
+import { OptionsT, Select, Switch } from "@spx/components"
+import { GeneratorActionT, GeneratorReducerState, IconSize } from "@spx/lib"
+import { ICON_SIZES } from "@spx/lib";
 import { ActionDispatch } from "react";
+
+const ICON_SIZE_LABELS = {
+    [ICON_SIZES.sm]: 'Small',
+    [ICON_SIZES.md]: 'Medium',
+    [ICON_SIZES.lg]: 'Large',
+} satisfies Record<IconSize, string>;
+
+const ICON_SIZE_OPTIONS: OptionsT<IconSize> = Object.values(ICON_SIZES).map((size) => ({
+    label: ICON_SIZE_LABELS[size],
+    value: size,
+}));
 
 export const Configuration = ({
     emailEnabled,
@@ -9,6 +21,7 @@ export const Configuration = ({
     socialMediaEnabled,
     bannerEnabled,
     lightModeEnabled,
+    iconSize,
     dispatch,
 }: GeneratorReducerState['config'] & {
     dispatch: ActionDispatch<[action: GeneratorActionT]>;
@@ -16,7 +29,7 @@ export const Configuration = ({
     return (
         <div className="flex flex-col items-center border-b border-zinc-800">
             <div className="flex flex-nowrap items-center justify-between gap-6 container px-4 py-4">
-                <div className="flex flex-nowrap gap-6">
+                <div className="flex flex-nowrap gap-6 items-center justify-start">
                     <Switch
                         id="enableEmail"
                         label="Email"
@@ -53,12 +66,22 @@ export const Configuration = ({
                     />
                 </div>
 
-                <Switch
-                    id="enableLightMode"
-                    label="Light Mode"
-                    value={lightModeEnabled}
-                    onChange={(value) => dispatch({ event: 'LightModeEnabledUpdated', payload: value })}
-                />
+                <div className="flex flex-nowrap gap-6 items-center justify-end">
+                    <Switch
+                        id="enableLightMode"
+                        label="Light Mode"
+                        value={lightModeEnabled}
+                        onChange={(value) => dispatch({ event: 'LightModeEnabledUpdated', payload: value })}
+                    />
+
+                    <Select
+                        id="iconSize"
+                        label="Icon Size"
+                        value={iconSize}
+                        onChange={(value) => dispatch({ event: 'IconSizeUpdated', payload: value })}
+                        options={ICON_SIZE_OPTIONS}
+                    />
+                </div>
             </div>
         </div>
     )

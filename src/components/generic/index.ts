@@ -3,3 +3,4 @@ export * from './icon';
 export * from './input';
 export * from './switch';
 export * from './divider';
+export * from './select';

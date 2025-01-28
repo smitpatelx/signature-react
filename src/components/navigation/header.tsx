@@ -1,6 +1,7 @@
 import Image from "next/image"
 import Link from "next/link"
 import { Icon, type IconType } from "@spx/components";
+import { APP_CONFIG } from "@spx/lib";
 
 const HEADER_LINK: Array<{
     name: string,
@@ -9,17 +10,17 @@ const HEADER_LINK: Array<{
 }> = [
         {
             name: "Github",
-            url: "https://github.com/smitpatelx",
+            url: APP_CONFIG.projectRepo,
             icon: "github",
         },
         {
             name: "Portfolio",
-            url: "https://smitpatelx.com/",
+            url: APP_CONFIG.authorPortfolio,
             icon: "user",
         },
         {
             name: "E-Mail",
-            url: "mailto:smitpatel.dev@gmail.com",
+            url: APP_CONFIG.authorEmail,
             icon: "mail",
         }
     ]
