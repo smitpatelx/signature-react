@@ -1,5 +1,5 @@
 import { useReducer } from "react";
-import { assertNeverThrow, Lens } from "@spx/lib";
+import { assertNeverThrow, getBannerUrl, Lens } from "@spx/lib";
 import { ICON_SIZES, IconSize } from "../email-signature";
 
 export type GeneratorReducerState = {
@@ -38,7 +38,7 @@ const DEFAULT_STATE: GeneratorReducerState = {
         socialMediaEnabled: true,
         bannerEnabled: true,
         lightModeEnabled: false,
-        iconSize: ICON_SIZES.sm,
+        iconSize: ICON_SIZES.lg,
     },
     formValues: {
         name: 'Smit',
@@ -54,7 +54,7 @@ const DEFAULT_STATE: GeneratorReducerState = {
         instagramUrl: 'https://instagram.com/smit.dev',
         facebookUrl: '#',
         bannerUrl: '#',
-        bannerImageUrl: '',
+        bannerImageUrl: getBannerUrl('email-banner100.png'),
     }
 };
 

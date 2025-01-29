@@ -5,8 +5,6 @@ import { DarkModeVariables } from "./dark-mode";
 import templateFile from "./templates/signature.eta";
 import { pipe } from "../fpts";
 
-// const TEMPLATE_PATH = path.join(__dirname, "/templates");
-
 const eta = new Eta({ varName: "data" });
 
 export const getSignatureHtml = (allVariables: Record<string, string | boolean>): string => {

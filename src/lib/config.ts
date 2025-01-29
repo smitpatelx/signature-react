@@ -16,3 +16,6 @@ export const getSocialMediaUrl = (socialMediaPath: string) => {
 export const getOtherMediaUrl = (socialMediaPath: string) => {
     return `${APP_CONFIG.staticHostName}/signature-gen/other/${socialMediaPath}` as const;
 }
+export const getBannerUrl = (socialMediaPath: string) => {
+    return `${APP_CONFIG.staticHostName}/signature-gen/banner/${socialMediaPath}` as const;
+}
