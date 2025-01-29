@@ -1,5 +1,5 @@
-import { useReducer } from "react";
-import { assertNeverThrow, getBannerUrl, Lens } from "@spx/lib";
+import { useMemo, useReducer } from "react";
+import { assertNeverThrow, E, getBannerUrl, getStorageInstance, safeParseJson, Lens, STORAGE_KEYS, STORAGE_TYPE } from "@spx/lib";
 import { ICON_SIZES, IconSize } from "../email-signature";
 
 export type GeneratorReducerState = {
@@ -113,6 +113,7 @@ export type GeneratorActionT =
     { event: 'FacebookUrlUpdated', payload: string } |
     { event: 'BannerUrlUpdated', payload: string } |
     { event: 'BannerImageUrlUpdated', payload: string } |
+    { event: 'StateUpdated', payload: GeneratorReducerState } |
     { event: 'Reset', payload: undefined };
 
 export type GeneratorActionEvent = GeneratorActionT['event'];
@@ -172,6 +173,8 @@ const reducer = (state: GeneratorReducerState, action: GeneratorActionT): Genera
             return GeneratorLens.bannerUrl.set(action.payload)(state);
         case 'BannerImageUrlUpdated':
             return GeneratorLens.bannerImageUrl.set(action.payload)(state);
+        case 'StateUpdated':
+            return action.payload;
         case 'Reset':
             return DEFAULT_STATE;
         default:
@@ -181,6 +184,26 @@ const reducer = (state: GeneratorReducerState, action: GeneratorActionT): Genera
 
 
 export const useGeneratorReducer = () => {
-    const [state, dispatch] = useReducer(reducer, DEFAULT_STATE);
+    const defaultState = useMemo(() => {
+        const generateStorageInstance = getStorageInstance(STORAGE_TYPE.local, STORAGE_KEYS.generator);
+        const value = generateStorageInstance.get();
+
+        if (value) {
+            const parsedValue = safeParseJson<GeneratorReducerState>(value);
+
+            if (E.isLeft(parsedValue)) {
+                // dispatch({ event: 'StateUpdated', payload: DEFAULT_STATE });
+                return DEFAULT_STATE;
+            }
+            // dispatch({ event: 'StateUpdated', payload: parsedValue.right });
+            return parsedValue.right;
+        }
+
+        // dispatch({ event: 'StateUpdated', payload: DEFAULT_STATE });
+        return DEFAULT_STATE;
+    }, []);
+
+    const [state, dispatch] = useReducer(reducer, defaultState);
+
     return [state, dispatch] as const;
 };

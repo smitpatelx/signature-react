@@ -31,7 +31,8 @@ export const Input = forwardRef<
                 name={id}
                 className={cn(
                     "text-zinc-200 bg-zinc-800 rounded-md text-base py-1 px-2",
-                    "focus-visible:ring-lime-400 border-zinc-700 focus-visible:border-zinc-950",
+                    "border-zinc-700 focus:border-zinc-700",
+                    "focus-visible:ring-1 focus-visible:ring-lime-400 focus-visible:ring-offset-2 focus-visible:ring-offset-zinc-950",
                     className
                 )}
                 {...rest}

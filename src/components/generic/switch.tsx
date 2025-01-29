@@ -54,9 +54,9 @@ export const Switch = ({
 
                 <div
                     className={cn(
-                        'w-10 h-5 inline-block rounded-full',
+                        'w-10 h-5 inline-block rounded-full border-zinc-700 focus:border-zinc-700',
                         'transition-transform duration-200 ease-in-out relative',
-                        'focus:outline-none focus-visible:ring-1 focus-visible:ring-teal-500 focus-visible:ring-offset-2 focus-visible:ring-offset-zinc-950',
+                        'focus:outline-none focus-visible:ring-1 focus-visible:ring-lime-400 focus-visible:ring-offset-2 focus-visible:ring-offset-zinc-950',
                         {
                             "bg-green-600": value,
                             "bg-zinc-600": !value,
@@ -64,7 +64,6 @@ export const Switch = ({
                     )}
                     onClick={handleEvent}
                     onKeyDown={handleKeyDown}
-                    // biome-ignore lint/a11y/noNoninteractiveTabindex: <explanation>
                     tabIndex={0}
                 >
                     <div

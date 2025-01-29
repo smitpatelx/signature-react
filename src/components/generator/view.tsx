@@ -1,12 +1,26 @@
 "use client";
 
-import { useGeneratorReducer } from "@spx/lib"
+import { useGeneratorReducer, useDebouncedValue, getStorageInstance, safeStringifyJson, STORAGE_TYPE, E, STORAGE_KEYS } from "@spx/lib"
 import { Configuration } from "./configuration"
 import { Form } from "./form"
 import { SignatureOutput } from "./signature-output"
+import { useEffect } from "react";
 
 export const GeneratorView = () => {
     const [state, dispatch] = useGeneratorReducer();
+
+    const [debouncedValue] = useDebouncedValue(state, 1000, {
+        leading: false
+    });
+
+    useEffect(() => {
+        const generateStorageInstance = getStorageInstance(STORAGE_TYPE.local, STORAGE_KEYS.generator);
+        const stringifiedValue = safeStringifyJson(debouncedValue);
+
+        if (E.isRight(stringifiedValue)) {
+            generateStorageInstance.set(stringifiedValue.right);
+        }
+    }, [debouncedValue]);
 
     return (
         <div className="flex-1 h-full flex flex-col">

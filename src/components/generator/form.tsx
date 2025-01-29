@@ -131,116 +131,118 @@ export const Form = ({
     dispatch: ActionDispatch<[action: GeneratorActionT]>;
 }) => {
     return (
-        <form className="flex-1 h-full grid grid-cols-1 md:grid-cols-2 gap-4 p-4 form">
-            <Input
-                {...MAIN_INPUTS.name}
-                value={values.name}
-                onChange={(e) => dispatch({ event: 'NameUpdated', payload: e.target.value })}
-            />
-
-            <Input
-                {...MAIN_INPUTS.position}
-                value={values.position}
-                onChange={(e) => dispatch({ event: 'PositionUpdated', payload: e.target.value })}
-            />
-
-            <Input
-                {...MAIN_INPUTS.companyName}
-                value={values.companyName}
-                onChange={(e) => dispatch({ event: 'CompanyNameUpdated', payload: e.target.value })}
-            />
-
-            {emailEnabled ? (
+        <div className="flex-1 h-full p-4 form overflow-y-auto">
+            <form className="h-full grid grid-cols-1 md:grid-cols-2 gap-4">
                 <Input
-                    {...MAIN_INPUTS.email}
-                    value={values.email}
-                    onChange={(e) => dispatch({ event: 'EmailUpdated', payload: e.target.value })}
+                    {...MAIN_INPUTS.name}
+                    value={values.name}
+                    onChange={(e) => dispatch({ event: 'NameUpdated', payload: e.target.value })}
                 />
-            ) : null}
 
-            {phoneEnabled ? (
                 <Input
-                    {...MAIN_INPUTS.phone}
-                    value={values.phone}
-                    onChange={(e) => dispatch({ event: 'PhoneUpdated', payload: e.target.value })}
+                    {...MAIN_INPUTS.position}
+                    value={values.position}
+                    onChange={(e) => dispatch({ event: 'PositionUpdated', payload: e.target.value })}
                 />
-            ) : null}
 
-            <Input
-                {...MAIN_INPUTS.profileImageUrl}
-                value={values.profileImageUrl}
-                onChange={(e) => dispatch({ event: 'ProfileImageUrlUpdated', payload: e.target.value })}
-            />
-
-            {websiteEnabled ? (
                 <Input
-                    {...MAIN_INPUTS.website}
-                    value={values.website}
-                    onChange={(e) => dispatch({ event: 'WebsiteUpdated', payload: e.target.value })}
+                    {...MAIN_INPUTS.companyName}
+                    value={values.companyName}
+                    onChange={(e) => dispatch({ event: 'CompanyNameUpdated', payload: e.target.value })}
                 />
-            ) : null}
 
-            {socialMediaEnabled ? (
-                <div className="col-span-2 grid grid-cols-1 gap-4">
-                    <div className="pt-4 pb-2 flex flex-col gap-2">
-                        <h2 className="text-lg font-semibold text-zinc-100">Social Media</h2>
+                {emailEnabled ? (
+                    <Input
+                        {...MAIN_INPUTS.email}
+                        value={values.email}
+                        onChange={(e) => dispatch({ event: 'EmailUpdated', payload: e.target.value })}
+                    />
+                ) : null}
 
-                        <Divider />
+                {phoneEnabled ? (
+                    <Input
+                        {...MAIN_INPUTS.phone}
+                        value={values.phone}
+                        onChange={(e) => dispatch({ event: 'PhoneUpdated', payload: e.target.value })}
+                    />
+                ) : null}
+
+                <Input
+                    {...MAIN_INPUTS.profileImageUrl}
+                    value={values.profileImageUrl}
+                    onChange={(e) => dispatch({ event: 'ProfileImageUrlUpdated', payload: e.target.value })}
+                />
+
+                {websiteEnabled ? (
+                    <Input
+                        {...MAIN_INPUTS.website}
+                        value={values.website}
+                        onChange={(e) => dispatch({ event: 'WebsiteUpdated', payload: e.target.value })}
+                    />
+                ) : null}
+
+                {socialMediaEnabled ? (
+                    <div className="col-span-2 grid grid-cols-1 gap-4">
+                        <div className="pt-4 pb-2 flex flex-col gap-2">
+                            <h2 className="text-lg font-semibold text-zinc-100">Social Media</h2>
+
+                            <Divider />
+                        </div>
+
+                        <Input
+                            {...SOCIAL_MEDIA_INPUTS.githubUrl}
+                            value={values.githubUrl}
+                            onChange={(e) => dispatch({ event: 'GithubUrlUpdated', payload: e.target.value })}
+                        />
+
+                        <Input
+                            {...SOCIAL_MEDIA_INPUTS.linkedinUrl}
+                            value={values.linkedinUrl}
+                            onChange={(e) => dispatch({ event: 'LinkedinUrlUpdated', payload: e.target.value })}
+                        />
+
+                        <Input
+                            {...SOCIAL_MEDIA_INPUTS.xUrl}
+                            value={values.xUrl}
+                            onChange={(e) => dispatch({ event: 'XUrlUpdated', payload: e.target.value })}
+                        />
+
+                        <Input
+                            {...SOCIAL_MEDIA_INPUTS.instagramUrl}
+                            value={values.instagramUrl}
+                            onChange={(e) => dispatch({ event: 'InstagramUrlUpdated', payload: e.target.value })}
+                        />
+
+                        <Input
+                            {...SOCIAL_MEDIA_INPUTS.facebookUrl}
+                            value={values.facebookUrl}
+                            onChange={(e) => dispatch({ event: 'FacebookUrlUpdated', payload: e.target.value })}
+                        />
                     </div>
+                ) : null}
 
-                    <Input
-                        {...SOCIAL_MEDIA_INPUTS.githubUrl}
-                        value={values.githubUrl}
-                        onChange={(e) => dispatch({ event: 'GithubUrlUpdated', payload: e.target.value })}
-                    />
+                {bannerEnabled ? (
+                    <div className="col-span-2 grid grid-cols-1 gap-4">
+                        <div className="pt-4 pb-2 flex flex-col gap-2">
+                            <h2 className="text-lg font-semibold text-zinc-100">Banner</h2>
 
-                    <Input
-                        {...SOCIAL_MEDIA_INPUTS.linkedinUrl}
-                        value={values.linkedinUrl}
-                        onChange={(e) => dispatch({ event: 'LinkedinUrlUpdated', payload: e.target.value })}
-                    />
+                            <Divider />
+                        </div>
 
-                    <Input
-                        {...SOCIAL_MEDIA_INPUTS.xUrl}
-                        value={values.xUrl}
-                        onChange={(e) => dispatch({ event: 'XUrlUpdated', payload: e.target.value })}
-                    />
+                        <Input
+                            {...BANNER_INPUTS.bannerUrl}
+                            value={values.bannerUrl}
+                            onChange={(e) => dispatch({ event: 'BannerUrlUpdated', payload: e.target.value })}
+                        />
 
-                    <Input
-                        {...SOCIAL_MEDIA_INPUTS.instagramUrl}
-                        value={values.instagramUrl}
-                        onChange={(e) => dispatch({ event: 'InstagramUrlUpdated', payload: e.target.value })}
-                    />
-
-                    <Input
-                        {...SOCIAL_MEDIA_INPUTS.facebookUrl}
-                        value={values.facebookUrl}
-                        onChange={(e) => dispatch({ event: 'FacebookUrlUpdated', payload: e.target.value })}
-                    />
-                </div>
-            ) : null}
-
-            {bannerEnabled ? (
-                <div className="col-span-2 grid grid-cols-1 gap-4">
-                    <div className="pt-4 pb-2 flex flex-col gap-2">
-                        <h2 className="text-lg font-semibold text-zinc-100">Banner</h2>
-
-                        <Divider />
+                        <Input
+                            {...BANNER_INPUTS.bannerImageUrl}
+                            value={values.bannerImageUrl}
+                            onChange={(e) => dispatch({ event: 'BannerImageUrlUpdated', payload: e.target.value })}
+                        />
                     </div>
-
-                    <Input
-                        {...BANNER_INPUTS.bannerUrl}
-                        value={values.bannerUrl}
-                        onChange={(e) => dispatch({ event: 'BannerUrlUpdated', payload: e.target.value })}
-                    />
-
-                    <Input
-                        {...BANNER_INPUTS.bannerImageUrl}
-                        value={values.bannerImageUrl}
-                        onChange={(e) => dispatch({ event: 'BannerImageUrlUpdated', payload: e.target.value })}
-                    />
-                </div>
-            ) : null}
-        </form>
+                ) : null}
+            </form>
+        </div>
     )
 }
