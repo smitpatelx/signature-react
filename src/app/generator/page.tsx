@@ -1,8 +1,9 @@
-"use client";
+import { GeneratorView } from "@spx/components";
 
-import dynamic from "next/dynamic";
-
-const GeneratorView = dynamic(() => import("@spx/components/generator/view").then((mod) => mod.GeneratorView), { ssr: false });
+export const metadata = {
+    title: "Email Signature Generator - Generator",
+    description: "Create a professional email signature for free with our generator",
+};
 
 const Generator = () => {
     return (

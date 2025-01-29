@@ -1,6 +1,7 @@
 import { useMemo, useReducer } from "react";
-import { assertNeverThrow, E, getBannerUrl, getStorageInstance, safeParseJson, Lens, STORAGE_KEYS, STORAGE_TYPE } from "@spx/lib";
+import { assertNeverThrow, E, getBannerUrl, getStorageInstance, safeParseJson, Lens, STORAGE_KEYS, STORAGE_TYPE, pipe } from "@spx/lib";
 import { ICON_SIZES, IconSize } from "../email-signature";
+import { trim } from "fp-ts/lib/string";
 
 export type GeneratorReducerState = {
     config: {
@@ -74,7 +75,7 @@ const GeneratorLens = {
     profileImageUrl: Lens.fromPath<GeneratorReducerState>()(['formValues', 'profileImageUrl']),
     name: Lens.fromPath<GeneratorReducerState>()(['formValues', 'name']),
     position: Lens.fromPath<GeneratorReducerState>()(['formValues', 'position']),
-    company: Lens.fromPath<GeneratorReducerState>()(['formValues', 'companyName']),
+    companyName: Lens.fromPath<GeneratorReducerState>()(['formValues', 'companyName']),
     email: Lens.fromPath<GeneratorReducerState>()(['formValues', 'email']),
     phone: Lens.fromPath<GeneratorReducerState>()(['formValues', 'phone']),
     website: Lens.fromPath<GeneratorReducerState>()(['formValues', 'website']),
@@ -146,33 +147,33 @@ const reducer = (state: GeneratorReducerState, action: GeneratorActionT): Genera
         case 'LightModeEnabledUpdated':
             return GeneratorLens.lightModeEnabled.set(action.payload)(state);
         case 'NameUpdated':
-            return GeneratorLens.name.set(action.payload)(state);
+            return pipe(action.payload, trim, (payload) => GeneratorLens.name.set(payload)(state));
         case 'PositionUpdated':
-            return GeneratorLens.position.set(action.payload)(state);
+            return pipe(action.payload, trim, (payload) => GeneratorLens.position.set(payload)(state));
         case 'CompanyNameUpdated':
-            return GeneratorLens.company.set(action.payload)(state);
+            return pipe(action.payload, trim, (payload) => GeneratorLens.companyName.set(payload)(state));
         case 'EmailUpdated':
-            return GeneratorLens.email.set(action.payload)(state);
+            return pipe(action.payload, trim, (payload) => GeneratorLens.email.set(payload)(state));
         case 'PhoneUpdated':
-            return GeneratorLens.phone.set(action.payload)(state);
+            return pipe(action.payload, trim, (payload) => GeneratorLens.phone.set(payload)(state));
         case 'ProfileImageUrlUpdated':
-            return GeneratorLens.profileImageUrl.set(action.payload)(state);
+            return pipe(action.payload, trim, (payload) => GeneratorLens.profileImageUrl.set(payload)(state));
         case 'WebsiteUpdated':
-            return GeneratorLens.website.set(action.payload)(state);
+            return pipe(action.payload, trim, (payload) => GeneratorLens.website.set(payload)(state));
         case 'GithubUrlUpdated':
-            return GeneratorLens.githubUrl.set(action.payload)(state);
+            return pipe(action.payload, trim, (payload) => GeneratorLens.githubUrl.set(payload)(state));
         case 'LinkedinUrlUpdated':
-            return GeneratorLens.linkedinUrl.set(action.payload)(state);
+            return pipe(action.payload, trim, (payload) => GeneratorLens.linkedinUrl.set(payload)(state));
         case 'XUrlUpdated':
-            return GeneratorLens.xUrl.set(action.payload)(state);
+            return pipe(action.payload, trim, (payload) => GeneratorLens.xUrl.set(payload)(state));
         case 'InstagramUrlUpdated':
-            return GeneratorLens.instagramUrl.set(action.payload)(state);
+            return pipe(action.payload, trim, (payload) => GeneratorLens.instagramUrl.set(payload)(state));
         case 'FacebookUrlUpdated':
-            return GeneratorLens.facebookUrl.set(action.payload)(state);
+            return pipe(action.payload, trim, (payload) => GeneratorLens.facebookUrl.set(payload)(state));
         case 'BannerUrlUpdated':
-            return GeneratorLens.bannerUrl.set(action.payload)(state);
+            return pipe(action.payload, trim, (payload) => GeneratorLens.bannerUrl.set(payload)(state));
         case 'BannerImageUrlUpdated':
-            return GeneratorLens.bannerImageUrl.set(action.payload)(state);
+            return pipe(action.payload, trim, (payload) => GeneratorLens.bannerImageUrl.set(payload)(state));
         case 'StateUpdated':
             return action.payload;
         case 'Reset':

@@ -12,7 +12,7 @@
             <tr>
               <td valign="top" width="10" style="vertical-align: top; width: 15px">
                 <img src="<%= data.profileImageUrl %>" alt="Profile Image" width="<%= data.profileImageWidth %>" height="<%= data.profileImageHeight %>" style="
-                    border-radius: 9999px;
+                    border-radius: 100%;
                     max-width: 120px;
                   " />
               </td>
@@ -94,7 +94,7 @@
                                     font-size: <%= data.phoneTextFontSize %>;
                                     margin: 0px;
                                   ">
-                                  <%= data.phone %> &nbsp;
+                                  <%= data.phone %>
                                 </a>
                               </td>
                             </tr>
@@ -104,7 +104,8 @@
                             <tr>
                               <td style="
                                   padding-right: 0px;
-                                  width: 15px;
+                                  height: <%= data.emailIconHeight %>;
+                                  width: <%= data.emailIconWidth %>;
                                   padding-bottom: 0px;
                                 ">
                                 <img height="<%= data.emailIconHeight %>" width="<%= data.emailIconWidth %>" src="<%= data.emailIconUrl %>" />
@@ -117,7 +118,7 @@
                                     font-size: <%= data.emailTextFontSize %>;
                                     margin: 0px;
                                   ">
-                                  <%= data.email %> &nbsp;
+                                  <%= data.email %>
                                 </a>
                               </td>
                             </tr>
@@ -127,7 +128,8 @@
                             <tr>
                               <td style="
                                   padding-right: 0px;
-                                  width: 15px;
+                                  height: <%= data.websiteIconHeight %>;
+                                  width: <%= data.websiteIconWidth %>;
                                   padding-bottom: 0px;
                                 ">
                                 <img height="<%= data.websiteIconHeight %>" width="<%= data.websiteIconWidth %>" src="<%= data.websiteIconUrl %>" />
@@ -140,7 +142,7 @@
                                     font-size: <%= data.websiteTextFontSize %>;
                                     margin: 0px;
                                   ">
-                                  <%= data.website %> &nbsp;
+                                  <%= data.website %>
                                 </a>
                               </td>
                             </tr>
@@ -156,6 +158,7 @@
                                 <table border="0" cellpadding="0" cellspacing="0">
                                   <tbody>
                                     <tr style="padding-top: 15px">
+                                      <% if (data.linkedinUrl) { %>
                                       <td align="left" style="
                                           padding-right: 5px;
                                           text-align: center;
@@ -165,6 +168,9 @@
                                           <img height="<%= data.linkedinIconHeight %>" width="<%= data.linkedinIconWidth %>" src="<%= data.linkedinIconUrl %>" />
                                         </a>
                                       </td>
+                                      <% } %>
+
+                                      <% if (data.instagramUrl) { %>
                                       <td align="left" style="
                                           padding-right: 5px;
                                           text-align: center;
@@ -174,6 +180,9 @@
                                           <img height="<%= data.instagramIconHeight %>" width="<%= data.instagramIconWidth %>" src="<%= data.instagramIconUrl %>" />
                                         </a>
                                       </td>
+                                      <% } %>
+
+                                      <% if (data.xUrl) { %>
                                       <td align="left" style="
                                           padding-right: 5px;
                                           text-align: center;
@@ -183,6 +192,9 @@
                                           <img height="<%= data.xIconHeight %>" width="<%= data.xIconWidth %>" src="<%= data.xIconUrl %>" />
                                         </a>
                                       </td>
+                                      <% } %>
+
+                                      <% if (data.githubUrl) { %>
                                       <td align="left" style="
                                           padding-right: 5px;
                                           text-align: center;
@@ -192,6 +204,9 @@
                                           <img height="<%= data.githubIconHeight %>" width="<%= data.githubIconWidth %>" src="<%= data.githubIconUrl %>" />
                                         </a>
                                       </td>
+                                      <% } %>
+
+                                      <% if (data.facebookUrl) { %>
                                       <td align="left" style="
                                           padding-right: 5px;
                                           text-align: center;
@@ -201,6 +216,7 @@
                                           <img height="<%= data.facebookIconHeight %>" width="<%= data.facebookIconWidth %>" src="<%= data.facebookIconUrl %>" />
                                         </a>
                                       </td>
+                                      <% } %>
                                     </tr>
                                   </tbody>
                                 </table>
@@ -219,7 +235,7 @@
         </table>
         <div style="clear: both; height: 0px !important"></div>
 
-        <% if (data.bannerEnabled) { %>
+        <% if (data.bannerEnabled && data.bannerUrl && data.bannerImageUrl) { %>
         <table cellpadding="0" cellspacing="0" border="0">
           <tbody>
             <tr>

@@ -2,7 +2,7 @@ import { Button, Icon } from "@spx/components";
 import Link from "next/link";
 
 export const metadata = {
-  title: "Email Signature Generator",
+  title: "Email Signature Generator - Home",
   description: "Create a professional email signature for free with our generator",
 };
 
@@ -21,7 +21,7 @@ const Home = () => {
 
         <div className="w-full flex flex-col gap-4 justify-center items-center">
           <Link href="/generator">
-            <Button>
+            <Button size="lg" rounded="full">
               Create New
               <Icon icon="fillSignature" />
             </Button>

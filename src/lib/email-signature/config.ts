@@ -99,6 +99,8 @@ export type ThemeVariables = {
     bannerImageStyleHeight: string;
 };
 
+export type AllVariables = ThemeVariables & ContentVariables;
+
 export const ICON_SIZES = {
     sm: 'sm',
     md: 'md',
@@ -199,4 +201,4 @@ export const getVariablesWithSize = (size: IconSize) => (themeVariables: ThemeVa
         bannerImageStyleHeight: SIZES.banner[size].height,
         bannerImageStyleWidth: SIZES.banner[size].width,
     } satisfies ThemeVariables;
-}
+};
