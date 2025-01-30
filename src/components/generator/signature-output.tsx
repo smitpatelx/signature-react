@@ -1,5 +1,5 @@
 import { Button, Divider, Icon, useToast } from "@spx/components";
-import { generateTemplate, GeneratorReducerState } from "@spx/lib";
+import { copyRichHtml, generateTemplate, GeneratorReducerState, copyString } from "@spx/lib";
 import { useMemo } from "react";
 
 const OUTPUT_ID = 'signature-output';
@@ -12,7 +12,7 @@ export const SignatureOutput = (props: GeneratorReducerState['config'] & Generat
     }, [props]);
 
     const handleCopyHtml = () => {
-        navigator.clipboard.writeText(htmlOutput);
+        copyString(htmlOutput);
         toast({ type: 'success', message: 'Copied HTML to clipboard' });
     };
 
@@ -20,15 +20,7 @@ export const SignatureOutput = (props: GeneratorReducerState['config'] & Generat
         const viewOutput = document.getElementById(OUTPUT_ID);
         if (!viewOutput) return;
 
-        const blobHtml = new Blob([viewOutput.innerHTML], { type: "text/html" });
-        const blobText = new Blob([viewOutput.innerHTML], { type: "text/plain" });
-
-        navigator.clipboard.write([
-            new ClipboardItem({
-                ['text/plain']: blobText,
-                ['text/html']: blobHtml,
-            })
-        ]);
+        copyRichHtml(viewOutput.innerHTML);
         toast({ type: 'success', message: 'Copied Rich-Text to clipboard' });
     }
 
