@@ -25,8 +25,6 @@ const getAllVariables = (prop: TemplateVariables) => {
 
     const themeVariables = pipe(lightModeEnabled, getThemeVariables, getVariablesWithSize(iconSize));
 
-    console.log({ contactIconWidth: themeVariables.emailIconHeight });
-
     return {
         ...themeVariables,
         ...contentVariables,

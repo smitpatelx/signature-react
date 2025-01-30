@@ -28,8 +28,8 @@ export const Configuration = ({
 }) => {
     return (
         <div className="flex flex-col items-center border-b border-zinc-800">
-            <div className="flex flex-nowrap items-center justify-between gap-6 container px-4 py-4">
-                <div className="flex flex-nowrap gap-6 items-center justify-start">
+            <div className="flex flex-col lg:flex-row flex-nowrap lg:items-center lg:justify-between gap-6 container px-4 py-4">
+                <div className="flex flex-col lg:flex-row flex-nowrap gap-6 lg:items-center lg:justify-start">
                     <Switch
                         id="enableEmail"
                         label="Email"
@@ -66,7 +66,7 @@ export const Configuration = ({
                     />
                 </div>
 
-                <div className="flex flex-nowrap gap-6 items-center justify-end">
+                <div className="flex flex-col lg:flex-row flex-nowrap gap-6 lg:items-center lg:justify-end">
                     <Switch
                         id="enableLightMode"
                         label="Light Mode"

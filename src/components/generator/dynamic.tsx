@@ -29,14 +29,14 @@ export const GeneratorViewDynamic = () => {
                 dispatch={dispatch}
             />
 
-            <div className="flex-1 h-full flex flex-row flex-nowrap gap-4 container mx-auto">
+            <div className="flex-1 h-full flex flex-col lg:flex-row flex-nowrap gap-4 container mx-auto pb-12 lg:pb-0">
                 <Form
                     {...state.formValues}
                     {...state.config}
                     dispatch={dispatch}
                 />
 
-                <div className="inline-block w-px bg-zinc-800" />
+                <div className="inline-block h-px lg:w-px bg-zinc-800" />
 
                 <SignatureOutput
                     {...state.config}

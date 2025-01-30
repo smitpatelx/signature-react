@@ -27,7 +27,7 @@ export const SignatureOutput = (props: GeneratorReducerState['config'] & Generat
     return (
         <div className="flex-1 h-full grid grid-cols-1 gap-4 p-4">
             <div className="pt-4 pb-2 flex flex-col gap-2">
-                <div className="flex flex-nowrap items-center justify-between gap-4">
+                <div className="flex flex-col lg:flex-row flex-nowrap items-start lg:items-center lg:justify-between gap-2 lg:gap-4">
                     <h3 className="text-lg font-semibold text-zinc-100">Signature Preview</h3>
 
                     <div className="flex flex-nowrap items-center justify-end gap-4">

@@ -132,58 +132,60 @@ export const Form = ({
 }) => {
     return (
         <div className="flex-1 h-full p-4 form overflow-y-auto">
-            <form className="h-full grid grid-cols-1 md:grid-cols-2 gap-4">
-                <Input
-                    {...MAIN_INPUTS.name}
-                    value={values.name}
-                    onChange={(e) => dispatch({ event: 'NameUpdated', payload: e.target.value })}
-                />
-
-                <Input
-                    {...MAIN_INPUTS.position}
-                    value={values.position}
-                    onChange={(e) => dispatch({ event: 'PositionUpdated', payload: e.target.value })}
-                />
-
-                <Input
-                    {...MAIN_INPUTS.companyName}
-                    value={values.companyName}
-                    onChange={(e) => dispatch({ event: 'CompanyNameUpdated', payload: e.target.value })}
-                />
-
-                {emailEnabled ? (
+            <form className="h-full grid grid-cols-1 gap-4">
+                <div className="col-span-full grid grid-cols-1 xl:grid-cols-2 gap-4">
                     <Input
-                        {...MAIN_INPUTS.email}
-                        value={values.email}
-                        onChange={(e) => dispatch({ event: 'EmailUpdated', payload: e.target.value })}
+                        {...MAIN_INPUTS.name}
+                        value={values.name}
+                        onChange={(e) => dispatch({ event: 'NameUpdated', payload: e.target.value })}
                     />
-                ) : null}
 
-                {phoneEnabled ? (
                     <Input
-                        {...MAIN_INPUTS.phone}
-                        value={values.phone}
-                        onChange={(e) => dispatch({ event: 'PhoneUpdated', payload: e.target.value })}
+                        {...MAIN_INPUTS.position}
+                        value={values.position}
+                        onChange={(e) => dispatch({ event: 'PositionUpdated', payload: e.target.value })}
                     />
-                ) : null}
 
-                <Input
-                    {...MAIN_INPUTS.profileImageUrl}
-                    value={values.profileImageUrl}
-                    onChange={(e) => dispatch({ event: 'ProfileImageUrlUpdated', payload: e.target.value })}
-                />
-
-                {websiteEnabled ? (
                     <Input
-                        {...MAIN_INPUTS.website}
-                        value={values.website}
-                        onChange={(e) => dispatch({ event: 'WebsiteUpdated', payload: e.target.value })}
+                        {...MAIN_INPUTS.companyName}
+                        value={values.companyName}
+                        onChange={(e) => dispatch({ event: 'CompanyNameUpdated', payload: e.target.value })}
                     />
-                ) : null}
+
+                    {emailEnabled ? (
+                        <Input
+                            {...MAIN_INPUTS.email}
+                            value={values.email}
+                            onChange={(e) => dispatch({ event: 'EmailUpdated', payload: e.target.value })}
+                        />
+                    ) : null}
+
+                    {phoneEnabled ? (
+                        <Input
+                            {...MAIN_INPUTS.phone}
+                            value={values.phone}
+                            onChange={(e) => dispatch({ event: 'PhoneUpdated', payload: e.target.value })}
+                        />
+                    ) : null}
+
+                    <Input
+                        {...MAIN_INPUTS.profileImageUrl}
+                        value={values.profileImageUrl}
+                        onChange={(e) => dispatch({ event: 'ProfileImageUrlUpdated', payload: e.target.value })}
+                    />
+
+                    {websiteEnabled ? (
+                        <Input
+                            {...MAIN_INPUTS.website}
+                            value={values.website}
+                            onChange={(e) => dispatch({ event: 'WebsiteUpdated', payload: e.target.value })}
+                        />
+                    ) : null}
+                </div>
 
                 {socialMediaEnabled ? (
-                    <div className="col-span-2 grid grid-cols-1 gap-4">
-                        <div className="pt-4 pb-2 flex flex-col gap-2">
+                    <div className="col-span-full grid grid-cols-1 xl:grid-cols-2 gap-4">
+                        <div className="col-span-full pt-4 pb-2 flex flex-col gap-2">
                             <h2 className="text-lg font-semibold text-zinc-100">Social Media</h2>
 
                             <Divider />
@@ -222,8 +224,8 @@ export const Form = ({
                 ) : null}
 
                 {bannerEnabled ? (
-                    <div className="col-span-2 grid grid-cols-1 gap-4">
-                        <div className="pt-4 pb-2 flex flex-col gap-2">
+                    <div className="col-span-full grid grid-cols-1 xl:grid-cols-2 gap-4">
+                        <div className="col-span-full pt-4 pb-2 flex flex-col gap-2">
                             <h2 className="text-lg font-semibold text-zinc-100">Banner</h2>
 
                             <Divider />
