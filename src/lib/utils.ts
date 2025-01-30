@@ -19,9 +19,7 @@ export const safeStringifyJson = (value: unknown): E.Either<Error, string> => {
     }
 }
 
-export const generateUuid = (): string => {
-    return v4();
-}
+export const generateUuid = (): string => v4();
 
 export const copyString = (value: string) => {
     navigator.clipboard.writeText(value);
