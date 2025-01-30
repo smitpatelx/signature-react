@@ -31,12 +31,12 @@ export const SignatureOutput = (props: GeneratorReducerState['config'] & Generat
                     <h3 className="text-lg font-semibold text-zinc-100">Signature Preview</h3>
 
                     <div className="flex flex-nowrap items-center justify-end gap-4">
-                        <Button size="sm" rounded="md" onClick={handleCopyHtml}>
+                        <Button size="md" rounded="md" onClick={handleCopyHtml}>
                             <Icon icon="copy" size="sm" />
                             HTML
                         </Button>
 
-                        <Button size="sm" rounded="md" onClick={handleCopyRichText}>
+                        <Button size="md" rounded="md" onClick={handleCopyRichText}>
                             <Icon icon="copy" size="sm" />
                             Rich Text
                         </Button>

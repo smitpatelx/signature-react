@@ -12,11 +12,11 @@ type ButtonSize = typeof BUTTON_SIZE[keyof typeof BUTTON_SIZE];
 const getButtonSizeClass = (size: ButtonSize) => {
     switch (size) {
         case BUTTON_SIZE.sm:
-            return "px-4 py-1 text-sm font-medium";
+            return "px-3 py-1.5 text-xs font-medium";
         case BUTTON_SIZE.md:
-            return "px-4 py-2 text-base font-medium";
+            return "px-4 py-2 text-sm font-medium";
         case BUTTON_SIZE.lg:
-            return "px-6 py-3 text-lg font-medium";
+            return "px-6 py-3 text-base font-medium";
         case BUTTON_SIZE.icon:
             return "p-2";
     }
