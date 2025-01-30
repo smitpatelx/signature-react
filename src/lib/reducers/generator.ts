@@ -51,10 +51,10 @@ const DEFAULT_STATE: GeneratorReducerState = {
         website: 'https://smitpatelx.com',
         githubUrl: 'https://github.com/smitpatelx',
         linkedinUrl: 'https://linkedin.com/in/smitpatelx',
-        xUrl: 'https://x.com/smitpatelx',
-        instagramUrl: 'https://instagram.com/smit.dev',
-        facebookUrl: '#',
-        bannerUrl: '#',
+        xUrl: 'https://x.com/username',
+        instagramUrl: 'https://instagram.com/username',
+        facebookUrl: 'https://facebook.com/username',
+        bannerUrl: 'https://smitpatelx.com',
         bannerImageUrl: getBannerUrl('email-banner100.png'),
     }
 };
