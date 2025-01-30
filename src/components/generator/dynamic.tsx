@@ -36,7 +36,7 @@ export const GeneratorViewDynamic = () => {
                     dispatch={dispatch}
                 />
 
-                <div className="inline-block h-px lg:w-px bg-zinc-800" />
+                <div className="inline-block h-px w-0 lg:h-auto lg:w-px bg-zinc-800" />
 
                 <SignatureOutput
                     {...state.config}
