@@ -1,3 +1,4 @@
+import { v4 } from 'uuid';
 import { E } from "./fpts";
 
 const InvalidJsonError = new Error("Invalid JSON");
@@ -16,4 +17,8 @@ export const safeStringifyJson = (value: unknown): E.Either<Error, string> => {
     } catch {
         return E.left(InvalidJsonError);
     }
+}
+
+export const generateUuid = (): string => {
+    return v4();
 }

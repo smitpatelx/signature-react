@@ -23,7 +23,7 @@ const Home = () => {
           <Link href="/generator">
             <Button size="lg" rounded="full" variant="primary">
               Create New
-              <Icon icon="fillSignature" />
+              <Icon icon="arrowRight" />
             </Button>
           </Link>
         </div>

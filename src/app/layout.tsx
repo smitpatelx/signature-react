@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
 import { Header } from "@spx/components";
+import { ToastProvider } from "@spx/components";
 
 const interFont = Inter({
   subsets: ["latin"],
@@ -24,7 +25,9 @@ export default function RootLayout({
       >
         <Header />
 
-        {children}
+        <ToastProvider>
+          {children}
+        </ToastProvider>
       </body>
     </html>
   );

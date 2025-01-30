@@ -1,19 +1,22 @@
-import { Button, Divider, Icon } from "@spx/components";
+import { Button, Divider, Icon, useToast } from "@spx/components";
 import { generateTemplate, GeneratorReducerState } from "@spx/lib";
 import { useMemo } from "react";
 
 const OUTPUT_ID = 'signature-output';
 
 export const SignatureOutput = (props: GeneratorReducerState['config'] & GeneratorReducerState['formValues']) => {
+    const { toast } = useToast();
+
     const htmlOutput = useMemo(() => {
         return generateTemplate(props);
     }, [props]);
 
     const handleCopyHtml = () => {
         navigator.clipboard.writeText(htmlOutput);
+        toast({ type: 'success', message: 'Copied HTML to clipboard' });
     };
 
-    const handleCopyView = () => {
+    const handleCopyRichText = () => {
         const viewOutput = document.getElementById(OUTPUT_ID);
         if (!viewOutput) return;
 
@@ -26,6 +29,7 @@ export const SignatureOutput = (props: GeneratorReducerState['config'] & Generat
                 ['text/html']: blobHtml,
             })
         ]);
+        toast({ type: 'success', message: 'Copied Rich-Text to clipboard' });
     }
 
     return (
@@ -40,9 +44,9 @@ export const SignatureOutput = (props: GeneratorReducerState['config'] & Generat
                             <span className="text-sm font-medium">HTML</span>
                         </Button>
 
-                        <Button size="sm" rounded="md" onClick={handleCopyView}>
+                        <Button size="sm" rounded="md" onClick={handleCopyRichText}>
                             <Icon icon="copy" size="sm" />
-                            <span className="text-sm font-medium">View</span>
+                            <span className="text-sm font-medium">Rich Text</span>
                         </Button>
                     </div>
                 </div>
