@@ -43,33 +43,53 @@ const getButtonRadiusClass = (rounded: ButtonRadius) => {
     }
 }
 
-const getButtonClass = (size: ButtonSize, rounded: ButtonRadius, className?: string) => cn(
+const BUTTON_VARIANT = {
+    default: "default",
+    primary: "primary",
+} as const;
+type ButtonVariant = typeof BUTTON_VARIANT[keyof typeof BUTTON_VARIANT];
+
+const getButtonVariantClass = (theme: ButtonVariant) => {
+    switch (theme) {
+        case BUTTON_VARIANT.primary:
+            return `bg-gradient-to-br from-emerald-800 to-lime-600 
+            hover:bg-gradient-to-br hover:from-emerald-800/70 hover:to-lime-600/70
+            text-teal-50 hover:shadow-teal-500/20`;
+        default:
+            return "bg-zinc-800 hover:bg-zinc-700 text-zinc-100 hover:shadow-zinc-900/20";
+    }
+}
+
+const getButtonClass = (size: ButtonSize, rounded: ButtonRadius, variant: ButtonVariant, className?: string) => cn(
     `flex gap-3 items-center justify-center leading-none
-    bg-gradient-to-br from-emerald-800 to-lime-600
-    hover:bg-gradient-to-br hover:from-emerald-800/70 hover:to-lime-600/70 text-teal-50
     focus-visible:ring-1 focus-visible:ring-teal-500 focus-visible:ring-offset-2 focus-visible:ring-offset-zinc-950
-    shadow-none hover:shadow-md hover:shadow-teal-500/20 transition-all duration-300 ease-in-out`,
+    shadow-none hover:shadow-md transition-all duration-300 ease-in-out`,
     getButtonSizeClass(size),
     getButtonRadiusClass(rounded),
+    getButtonVariantClass(variant),
     className,
 );
 
-export const Button = ({
-    className = "",
-    size = BUTTON_SIZE.md,
-    rounded = BUTTON_RADIUS.md,
-    ...props
-}: DetailedHTMLProps<
+export type ButtonProps = DetailedHTMLProps<
     HTMLAttributes<HTMLButtonElement>,
     HTMLButtonElement
 > & {
     size?: ButtonSize,
     rounded?: ButtonRadius,
-}) => {
+    variant?: ButtonVariant,
+};
+
+export const Button = ({
+    className = "",
+    size = BUTTON_SIZE.md,
+    rounded = BUTTON_RADIUS.md,
+    variant = BUTTON_VARIANT.default,
+    ...props
+}: ButtonProps) => {
     return (
         <button
             {...props}
-            className={getButtonClass(size, rounded, className)}
+            className={getButtonClass(size, rounded, variant, className)}
         />
     )
 }
