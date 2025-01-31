@@ -8,7 +8,8 @@ export const metadata = {
 
 const Home = () => {
   return (
-    <div className="flex-1 h-full flex flex-col items-center justify-center p-8 pb-20 gap-16 sm:p-20 bg-gradient-to-br from-zinc-950 via-lime-900/30 to-sky-900/30">
+    <div className="flex-1 h-full flex flex-col items-center justify-center p-8 pb-20 gap-16 sm:p-20
+      bg-gradient-to-br from-zinc-950 from-0% via-lime-900/30 via-80% to-sky-900/30 to-[120%]">
       <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
         <HeroAnimation />
 
