@@ -9,5 +9,5 @@ button, input, select, textarea, a {
 }
 
 button, a {
-  @apply cursor-default;
+  @apply cursor-default focus:outline-none focus:border-none;
 }

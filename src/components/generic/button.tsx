@@ -54,7 +54,7 @@ const getButtonVariantClass = (theme: ButtonVariant) => {
         case BUTTON_VARIANT.primary:
             return `bg-gradient-to-br from-emerald-800 to-lime-600 
             hover:bg-gradient-to-br hover:from-emerald-800/70 hover:to-lime-600/70
-            text-teal-50 hover:shadow-teal-500/20`;
+            text-lime-50 hover:shadow-lime-500/20`;
         default:
             return "bg-zinc-800 hover:bg-zinc-700 text-zinc-100 hover:shadow-zinc-900/20";
     }
@@ -62,7 +62,7 @@ const getButtonVariantClass = (theme: ButtonVariant) => {
 
 const getButtonClass = (size: ButtonSize, rounded: ButtonRadius, variant: ButtonVariant, className?: string) => cn(
     `flex gap-3 items-center justify-center leading-none
-    focus-visible:ring-1 focus-visible:ring-teal-500 focus-visible:ring-offset-2 focus-visible:ring-offset-zinc-950
+    focus-visible:ring-1 focus-visible:ring-lime-500 focus-visible:ring-offset-2 focus-visible:ring-offset-zinc-950
     shadow-none hover:shadow-md transition-all duration-300 ease-in-out`,
     getButtonSizeClass(size),
     getButtonRadiusClass(rounded),
