@@ -5,3 +5,4 @@ export * from './switch';
 export * from './divider';
 export * from './select';
 export * from './toast';
+export * from './image';

@@ -1,9 +1,8 @@
 "use client";
 
-import { lazy } from "react";
+import dynamic from 'next/dynamic';
 
-const Player = lazy(() =>
-    import('@lottiefiles/react-lottie-player').then((module) => ({ default: module.Player })));
+const Player = dynamic(() => import('@lottiefiles/react-lottie-player').then((mod) => mod.Player), { ssr: false });
 
 export const HeroAnimation = () => {
     return (

@@ -4,6 +4,7 @@ export const APP_CONFIG = {
     projectRepo: 'https://github.com/smitpatelx/signature-react',
     authorPortfolio: 'https://smitpatelx.com',
     authorEmail: 'mailto:inspire@smitpatelx.com',
+    fallbackImage: 'https://static.smitpatelx.com/smitpatelx-v2/fallback.svg',
 }
 
 export const getStaticUrl = (pathWithForwardSlash: string) => {

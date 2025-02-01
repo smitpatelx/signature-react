@@ -1,6 +1,9 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
+  reactStrictMode: true,
+  compress: true,
+  poweredByHeader: false,
   webpack: (config) => {
     return {
       ...config,
@@ -24,7 +27,16 @@ const nextConfig: NextConfig = {
           as: '*.ts',
         }
       },
-    }
+    },
+  },
+  images: {
+    unoptimized: true,
+    remotePatterns: [
+      {
+        hostname: 'static.smitpatelx.com',
+        protocol: 'https',
+      }
+    ],
   }
 };
 

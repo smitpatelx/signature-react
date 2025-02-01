@@ -1,7 +1,7 @@
-import Image from "next/image"
 import Link from "next/link"
 import { Icon, type IconType } from "@spx/components";
 import { APP_CONFIG } from "@spx/lib";
+import Image from "next/image";
 
 const HEADER_LINK: Array<{
     name: string,
@@ -34,8 +34,8 @@ export const Header = () => {
                         src="/logo/logo-email-signature.svg"
                         alt="logo"
                         width={260}
-                        height={60}
-                        className="brightness-100 group-hover:brightness-75 transition-all duration-300 ease-in-out"
+                        height={40}
+                        className="w-[260px] h-[40px] brightness-100 group-hover:brightness-75 transition-all duration-300 ease-in-out"
                     />
                 </Link>
 

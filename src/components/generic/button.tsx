@@ -1,3 +1,5 @@
+"use client";
+
 import { cn } from "@spx/lib";
 import type { DetailedHTMLProps, HTMLAttributes } from "react"
 
