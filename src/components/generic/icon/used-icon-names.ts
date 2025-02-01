@@ -1,4 +1,4 @@
-import { FiAlertTriangle, FiArrowRightCircle, FiCheckCircle, FiCopy, FiGithub, FiInfo, FiMail, FiRefreshCw, FiUser, FiXCircle } from "react-icons/fi";
+import { FiAlertTriangle, FiArrowRightCircle, FiCheckCircle, FiCopy, FiGithub, FiInfo, FiMail, FiPlus, FiRefreshCw, FiUser, FiXCircle } from "react-icons/fi";
 
 export const IconName = {
     github: FiGithub,
@@ -11,6 +11,7 @@ export const IconName = {
     alertTriangle: FiAlertTriangle,
     closeCircle: FiXCircle,
     info: FiInfo,
+    plus: FiPlus,
 } as const;
 
 export type IconNameT = keyof typeof IconName;

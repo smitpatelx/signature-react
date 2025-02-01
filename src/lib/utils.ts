@@ -1,3 +1,5 @@
+"use client";
+
 import { v4 } from 'uuid';
 import { E } from "./fpts";
 

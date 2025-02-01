@@ -1,5 +1,6 @@
-import { OptionsT, Select, Switch } from "@spx/components"
-import { GeneratorActionT, GeneratorReducerState, IconSize } from "@spx/lib"
+import { OptionsT, Select, Switch } from "@spx/components";
+import { IconSize } from "@spx/lib";
+import { GeneratorActionT, GeneratorReducerState } from "@spx/lib/reducers";
 import { ICON_SIZES } from "@spx/lib";
 import { ActionDispatch } from "react";
 

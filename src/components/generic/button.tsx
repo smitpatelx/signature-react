@@ -54,9 +54,7 @@ type ButtonVariant = typeof BUTTON_VARIANT[keyof typeof BUTTON_VARIANT];
 const getButtonVariantClass = (theme: ButtonVariant) => {
     switch (theme) {
         case BUTTON_VARIANT.primary:
-            return `bg-gradient-to-br from-emerald-800 to-lime-600 
-            hover:bg-gradient-to-br hover:from-emerald-800/70 hover:to-lime-600/70
-            text-lime-50 hover:shadow-lime-500/20`;
+            return `bg-zinc-950 hover:bg-lime-950 text-zinc-100 group-hover:bg-lime-950 z-10 focus-visible:ring-0 focus-visible:ring-offset-0`;
         default:
             return "bg-zinc-800 hover:bg-zinc-700 text-zinc-100 hover:shadow-zinc-900/20";
     }
@@ -88,6 +86,21 @@ export const Button = ({
     variant = BUTTON_VARIANT.default,
     ...props
 }: ButtonProps) => {
+    if (variant === BUTTON_VARIANT.primary) {
+        return (
+            <div className="group p-px bg-lime-300/20 hover:bg-lime-300/40 relative rounded-full overflow-hidden
+              isolate transition-colors duration-100 ease-in-out focus-within:bg-lime-300/40">
+                <button
+                    {...props}
+                    className={getButtonClass(size, rounded, variant, className)}
+                />
+
+                <div className="-z-10 w-20 h-20 pointer-events-none rounded-full bg-gradient-to-r absolute transform origin-center
+                    from-zinc-900/20 from-0% via-lime-900/40 via-60% to-lime-500/80 to-100% animate-border-animation" />
+            </div>
+        )
+    }
+
     return (
         <button
             {...props}

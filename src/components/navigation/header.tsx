@@ -27,7 +27,7 @@ const HEADER_LINK: Array<{
 
 export const Header = () => {
     return (
-        <header className="flex items-center justify-center border-b border-zinc-800">
+        <header className="flex items-center justify-center border-b border-zinc-900 bg-zinc-950/30 backdrop-blur-sm">
             <nav className="w-full container py-2 px-4 flex gap-4 items-center justify-between">
                 <Link href="/" className="group">
                     <Image

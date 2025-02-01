@@ -1,6 +1,10 @@
 "use client";
 
-import { useGeneratorReducer, useDebouncedValue, getStorageInstance, safeStringifyJson, STORAGE_TYPE, E, STORAGE_KEYS } from "@spx/lib"
+import { E } from "@spx/lib"
+import { getStorageInstance, STORAGE_TYPE, STORAGE_KEYS } from "@spx/lib/storage"
+import { safeStringifyJson } from "@spx/lib/utils"
+import { useDebouncedValue } from "@spx/lib/hooks"
+import { useGeneratorReducer } from "@spx/lib/reducers"
 import { useEffect } from "react";
 import { Configuration } from "./configuration";
 import { Form } from "./form";

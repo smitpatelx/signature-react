@@ -1,5 +1,7 @@
 import { Button, Divider, Icon, useToast } from "@spx/components";
-import { copyRichHtml, generateTemplate, GeneratorReducerState, copyString } from "@spx/lib";
+import { generateTemplate } from "@spx/lib";
+import { copyRichHtml, copyString } from "@spx/lib/utils";
+import { GeneratorReducerState } from "@spx/lib/reducers";
 import { useMemo } from "react";
 
 const OUTPUT_ID = 'signature-output';

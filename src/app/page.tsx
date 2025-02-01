@@ -1,15 +1,16 @@
-import { Button, HeroAnimation, Icon } from "@spx/components";
+import { Button, HeroAnimation, Icon, StaticGrid } from "@spx/components";
+import type { Metadata } from "next";
 import Link from "next/link";
 
-export const metadata = {
+export const metadata: Metadata = {
   title: "Email Signature Generator - Home",
   description: "Create a professional email signature for free with our generator",
 };
 
-const Home = () => {
+export default function Home() {
   return (
     <div className="flex-1 h-full flex flex-col items-center justify-center p-8 pb-20 gap-16 sm:p-20
-      bg-gradient-to-br from-zinc-950 from-0% via-lime-900/30 via-80% to-sky-900/30 to-[120%]">
+      bg-gradient-to-br from-zinc-950/80 from-0% via-lime-950/30 via-80% to-sky-950/30 to-[120%]">
       <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
         <HeroAnimation />
 
@@ -24,26 +25,19 @@ const Home = () => {
 
         <div className="w-full flex flex-col gap-4 justify-center items-center">
           <Link href="/generator" tabIndex={-1}>
-            <div className="group p-px bg-lime-300/20 hover:bg-lime-300/40 relative rounded-full overflow-hidden
-              isolate transition-colors duration-100 ease-in-out focus-within:bg-lime-300/40">
-              <Button
-                size="lg"
-                rounded="full"
-                variant="default"
-                className="bg-zinc-950 hover:bg-lime-950 group-hover:bg-lime-950 z-10 focus-visible:ring-0 focus-visible:ring-offset-0"
-              >
-                Create New
-                <Icon icon="arrowRight" />
-              </Button>
-
-              <div className="-z-10 w-20 h-20 pointer-events-none rounded-full bg-gradient-to-r absolute transform origin-center
-                from-zinc-900/20 from-0% via-lime-900/40 via-60% to-lime-500/80 to-100% animate-border-animation" />
-            </div>
+            <Button
+              size="lg"
+              rounded="full"
+              variant="primary"
+            >
+              Create New
+              <Icon icon="arrowRight" />
+            </Button>
           </Link>
         </div>
+
+        <StaticGrid />
       </main>
     </div>
   );
 }
-
-export default Home;

@@ -1,5 +1,7 @@
 import { useMemo, useReducer } from "react";
-import { assertNeverThrow, E, getBannerUrl, getStorageInstance, safeParseJson, Lens, STORAGE_KEYS, STORAGE_TYPE, pipe } from "@spx/lib";
+import { assertNeverThrow, E, getBannerUrl, Lens, pipe } from "@spx/lib";
+import { getStorageInstance, STORAGE_KEYS, STORAGE_TYPE } from "@spx/lib/storage";
+import { safeParseJson } from "@spx/lib/utils";
 import { ICON_SIZES, IconSize } from "../email-signature";
 import { trim } from "fp-ts/lib/string";
 

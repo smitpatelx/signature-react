@@ -1,4 +1,4 @@
-import { GeneratorActionT, GeneratorReducerState } from "@spx/lib";
+import { GeneratorActionT, GeneratorReducerState } from "@spx/lib/reducers";
 import { Divider, Input } from "@spx/components";
 import { ActionDispatch } from "react";
 
