@@ -1,7 +1,6 @@
 import { OptionsT, Select, Switch } from "@spx/components";
-import { IconSize } from "@spx/lib";
-import { GeneratorActionT, GeneratorReducerState } from "@spx/lib/reducers";
-import { ICON_SIZES } from "@spx/lib";
+import { ICON_SIZES, IconSize } from "@spx/lib/common";
+import { GeneratorActionT, GeneratorReducerState } from "@spx/lib/client";
 import { ActionDispatch } from "react";
 
 const ICON_SIZE_LABELS = {

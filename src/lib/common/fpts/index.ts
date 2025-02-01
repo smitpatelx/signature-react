@@ -1,4 +1,5 @@
 export { pipe } from 'fp-ts/function';
+export { trim } from "fp-ts/lib/string";
 export { either as E } from 'fp-ts';
 export { Lens } from 'monocle-ts';
 

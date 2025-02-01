@@ -1,4 +1,4 @@
-import { cn } from "@spx/lib";
+import { cn } from "@spx/lib/common";
 import { ToastT } from "./context";
 import { Icon, IconType } from "../icon";
 

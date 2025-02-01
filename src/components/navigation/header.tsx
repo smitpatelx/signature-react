@@ -1,7 +1,7 @@
 import Link from "next/link"
-import { Icon, type IconType } from "@spx/components";
-import { APP_CONFIG } from "@spx/lib";
 import Image from "next/image";
+import { Icon, type IconType } from "@spx/components";
+import { APP_CONFIG } from "@spx/lib/common";
 
 const HEADER_LINK: Array<{
     name: string,

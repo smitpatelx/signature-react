@@ -1,4 +1,4 @@
-import { cn } from "@spx/lib";
+import { cn } from "@spx/lib/common";
 import { DetailedHTMLProps, Ref, SelectHTMLAttributes } from "react";
 
 type ValueT = string | number;

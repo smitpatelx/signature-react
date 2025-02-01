@@ -1,4 +1,4 @@
-import { cn } from "@spx/lib";
+import { cn } from "@spx/lib/common";
 import { forwardRef, type DetailedHTMLProps, type InputHTMLAttributes } from "react";
 
 const INPUT_VARIANT = {

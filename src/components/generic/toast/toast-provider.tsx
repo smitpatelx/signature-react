@@ -1,6 +1,6 @@
 import { ReactNode, useCallback, useMemo, useState } from "react";
 import { ToastContext, ToastContextT, ToastFnPropT } from "./context";
-import { generateUuid } from "@spx/lib/utils";
+import { generateUuid } from "@spx/lib/common";
 import { Toast } from "./toast";
 
 const DEFAULT_DELAY = 3000;

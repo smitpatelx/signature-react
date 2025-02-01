@@ -1,9 +1,6 @@
 import { useMemo, useReducer } from "react";
-import { assertNeverThrow, E, getBannerUrl, Lens, pipe } from "@spx/lib";
-import { getStorageInstance, STORAGE_KEYS, STORAGE_TYPE } from "@spx/lib/storage";
-import { safeParseJson } from "@spx/lib/utils";
-import { ICON_SIZES, IconSize } from "../email-signature";
-import { trim } from "fp-ts/lib/string";
+import { getStorageInstance, STORAGE_KEYS, STORAGE_TYPE } from "../storage";
+import { ICON_SIZES, IconSize, E, trim, pipe, assertNeverThrow, Lens, getBannerUrl, safeParseJson } from "@spx/lib/common";
 
 export type GeneratorReducerState = {
     config: {

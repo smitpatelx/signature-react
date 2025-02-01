@@ -1,4 +1,4 @@
-import { cn } from "@spx/lib";
+import { cn } from "@spx/lib/common";
 import { Icon } from "@spx/components";
 
 export const StaticGrid = () => {

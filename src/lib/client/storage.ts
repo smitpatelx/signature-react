@@ -1,5 +1,3 @@
-"use client";
-
 export const STORAGE_TYPE = {
     local: 'local',
     session: 'session'

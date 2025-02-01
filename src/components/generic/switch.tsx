@@ -1,6 +1,6 @@
 "use client";
 
-import { cn } from "@spx/lib";
+import { cn } from "@spx/lib/common";
 import { useEffect, useState } from "react";
 
 type EventHandlerProps = { preventDefault: () => void; stopPropagation: () => void; };

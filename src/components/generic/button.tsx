@@ -1,6 +1,6 @@
 "use client";
 
-import { cn } from "@spx/lib";
+import { cn } from "@spx/lib/common";
 import type { DetailedHTMLProps, HTMLAttributes } from "react"
 
 const BUTTON_SIZE = {
