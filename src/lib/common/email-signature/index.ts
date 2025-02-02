@@ -1,5 +1,5 @@
-export * from './template';
+export * from "./template";
 export {
-    type IconSize,
-    ICON_SIZES,
-} from './config';
+  type IconSize,
+  ICON_SIZES,
+} from "./config";

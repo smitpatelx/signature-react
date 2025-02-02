@@ -14,14 +14,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body
-        className={`${interFont.className} antialiased flex flex-col min-h-screen font-sans bg-zinc-950`}
-      >
+      <body className={`${interFont.className} antialiased flex flex-col min-h-screen font-sans bg-zinc-950`}>
         <Header />
 
-        <ToastProvider>
-          {children}
-        </ToastProvider>
+        <ToastProvider>{children}</ToastProvider>
       </body>
     </html>
   );

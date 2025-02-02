@@ -1,2 +1,2 @@
-export * from './hero-animation';
-export * from './static-grid';
+export * from "./hero-animation";
+export * from "./static-grid";

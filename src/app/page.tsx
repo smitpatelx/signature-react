@@ -9,8 +9,10 @@ export const metadata: Metadata = {
 
 export default function Home() {
   return (
-    <div className="flex-1 h-full flex flex-col items-center justify-center p-8 pb-20 gap-16 sm:p-20
-      bg-gradient-to-br from-zinc-950/80 from-0% via-lime-950/30 via-80% to-sky-950/30 to-[120%]">
+    <div
+      className="flex-1 h-full flex flex-col items-center justify-center p-8 pb-20 gap-16 sm:p-20
+      bg-gradient-to-br from-zinc-950/80 from-0% via-lime-950/30 via-80% to-sky-950/30 to-[120%]"
+    >
       <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
         <HeroAnimation />
 
@@ -25,11 +27,7 @@ export default function Home() {
 
         <div className="w-full flex flex-col gap-4 justify-center items-center">
           <Link href="/generator" tabIndex={-1}>
-            <Button
-              size="lg"
-              rounded="full"
-              variant="primary"
-            >
+            <Button size="lg" rounded="full" variant="primary">
               Create New
               <Icon icon="arrowRight" />
             </Button>

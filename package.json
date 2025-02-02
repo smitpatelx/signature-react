@@ -6,7 +6,8 @@
     "dev": "next dev --turbopack",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "npx @biomejs/biome check",
+    "format": "npx @biomejs/biome check --write"
   },
   "dependencies": {
     "@lottiefiles/react-lottie-player": "^3.6.0",
@@ -22,6 +23,7 @@
     "uuid": "^11.0.5"
   },
   "devDependencies": {
+    "@biomejs/biome": "^1.9.4",
     "@eslint/eslintrc": "^3",
     "@tailwindcss/forms": "^0.5.10",
     "@types/node": "^20",

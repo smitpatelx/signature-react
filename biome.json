@@ -1,0 +1,60 @@
+{
+  "$schema": "https://biomejs.dev/schemas/1.9.4/schema.json",
+  "files": {
+    "maxSize": 2000000,
+    "ignoreUnknown": false,
+    "ignore": [
+      "./tmp",
+      "./.vscode",
+      "/dist",
+      "/coverage",
+      "node_modules",
+      ".DS_Store",
+      "dist",
+      "dist-ssr",
+      "*.local",
+      "node_modules/*",
+      ".prettierrc.json",
+      "*.md",
+      ".next",
+      "public",
+      ".vercel"
+    ]
+  },
+  "vcs": {
+    "enabled": false
+  },
+  "formatter": {
+    "enabled": true,
+    "formatWithErrors": false,
+    "indentStyle": "space",
+    "indentWidth": 2,
+    "lineEnding": "lf",
+    "lineWidth": 120
+  },
+  "linter": {
+    "enabled": true,
+    "rules": {
+      "recommended": true,
+      "a11y": {
+        "noSvgWithoutTitle": "off",
+        "noNoninteractiveTabindex": "off"
+      },
+      "correctness": {
+        "noUnusedImports": "warn",
+        "noConstAssign": "warn",
+        "noEmptyPattern": "warn",
+        "useHookAtTopLevel": "warn"
+      },
+      "suspicious": {
+        "noConstEnum": "error"
+      },
+      "security": {
+        "noDangerouslySetInnerHtml": "warn"
+      }
+    }
+  },
+  "organizeImports": {
+    "enabled": false
+  }
+}

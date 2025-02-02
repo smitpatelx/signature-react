@@ -22,10 +22,10 @@ const nextConfig: NextConfig = {
   experimental: {
     turbo: {
       rules: {
-        '*.eta': {
-          loaders: ['raw-loader'],
-          as: '*.ts',
-        }
+        "*.eta": {
+          loaders: ["raw-loader"],
+          as: "*.ts",
+        },
       },
     },
   },
@@ -33,11 +33,11 @@ const nextConfig: NextConfig = {
     unoptimized: true,
     remotePatterns: [
       {
-        hostname: 'static.smitpatelx.com',
-        protocol: 'https',
-      }
+        hostname: "static.smitpatelx.com",
+        protocol: "https",
+      },
     ],
-  }
+  },
 };
 
 export default nextConfig;
